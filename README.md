@@ -6,16 +6,24 @@
 
 # svelte-setup-series
 
-## Prerequsite
+## Using Node.js
 
 Required: `{"node":"^16.14 || >=18"}`
-
-## How to install
 
 ```bash
 npm create svelte@latest <project-name>
 cd <project-name>
 npm install
-npm run dev
+npm run dev -- --open
 ```
 
+## Using Bun
+
+Required: `bun`
+
+```bash
+bun create svelte@latest <project-name>
+cd <project-name>
+bun install
+bun run dev -- --open
+```
