@@ -27,3 +27,17 @@ cd <project-name>
 bun install
 bun run dev -- --open
 ```
+
+## Using Skeleton with Bun
+
+Skeleton is the UI toolkit for Svelte and Tailwind.
+
+- <https://www.skeleton.dev/>
+
+```bash
+bun create skeleton-app@latest <project-name>
+# Recommand enabling TypeScript when prompted
+cd <project-name>
+bun install
+bun run dev -- --open
+```
