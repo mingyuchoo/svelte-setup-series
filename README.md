@@ -14,6 +14,57 @@ Required: `{"node":"^16.14 || >=18"}`
 npm create svelte@latest <project-name>
 cd <project-name>
 npm install
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+```js
+// svelte.config.js
+
+import adapter from "@sveltejs/adapter-auto";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  kit: {
+    adapter: adapter(),
+  },
+  preprocess: vitePreprocess(),
+};
+export default config;
+```
+
+```js
+// tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{html,js,svelte,ts}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+```css
+/* app.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+```svelte
+<!-- +layout.svelte -->
+
+<script>
+  import "../app.css";
+</script>
+
+<slot />
+```
+
+```bash
 npm run dev -- --open
 ```
 
