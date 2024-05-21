@@ -6,7 +6,7 @@
 
 # svelte-setup-series
 
-## Using Node.js
+## Set up using Node.js
 
 Required: `{"node":"^16.14 || >=18"}`
 
@@ -68,74 +68,26 @@ export default {
 npm run dev -- --open
 ```
 
-## Using Bun
+## Add new Path Alias
 
-Required: `bun`
-
-```bash
-bun create svelte@latest <project-name>
-cd <project-name>
-bun install
-bun add -D tailwindcss postcss autoprefixer
-bunx tailwindcss init -p
-```
+Let's add `$compoents` alias which will be resolved to `src/components`.
 
 ```js
 // svelte.config.js
 
 import adapter from "@sveltejs/adapter-auto";
-import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import { vitePreprocess } from "@sveltejs/kit/vite";
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+  preprocess: vitePreprocess(),
   kit: {
     adapter: adapter(),
+    alias: {
+      $components: "src/components",
+    },
   },
-  preprocess: vitePreprocess(),
 };
+
 export default config;
-```
-
-```js
-// tailwind.config.js
-
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
-
-```css
-/* app.css */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-```svelte
-<!-- +layout.svelte -->
-
-<script>
-  import "../app.css";
-</script>
-
-<slot />
-```
-
-## Using Skeleton with Bun
-
-Skeleton is the UI toolkit for Svelte and Tailwind.
-
-- <https://www.skeleton.dev/>
-
-```bash
-bun create skeleton-app@latest <project-name>
-# Recommand enabling TypeScript when prompted
-cd <project-name>
-bun install
-bun run dev -- --open
 ```
