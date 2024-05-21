@@ -68,6 +68,17 @@ export default {
 npm run dev -- --open
 ```
 
+## Set up CSS Framework
+
+### Using Melt-UI
+
+```bash
+cd <project-name>
+npx @melt-ui/cli@latest init
+npm install -D @tailwindcss/typography
+npm install -D lucide-svelte
+```
+
 ## Add new Path Alias
 
 Let's add `$compoents` alias which will be resolved to `src/components`.
