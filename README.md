@@ -47,7 +47,7 @@ export default {
 ```
 
 ```css
-/* app.css */
+/* src/app.css */
 
 @tailwind base;
 @tailwind components;
