@@ -7,6 +7,8 @@ create a new project in {project-name}
 ** Developing
 start the server and open the app in a new browser tab
 #+begin_src shell
+  cd {project-name}
+  bun install
   bun run dev -- --open
 #+end_src
 ** Building
