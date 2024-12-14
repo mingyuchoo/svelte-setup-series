@@ -1,0 +1,20 @@
+* README
+** Creating a project
+create a new project in {project-name}
+#+begin_src shell
+  bunx sv create {project-name} 
+#+end_src
+** Developing
+start the server and open the app in a new browser tab
+#+begin_src shell
+  bun run dev -- --open
+#+end_src
+** Building
+create a production version of your app
+#+begin_src shell
+  bun run build
+#+end_src
+preview the production build
+#+begin_src shell
+  bun run preview
+#+end_src
