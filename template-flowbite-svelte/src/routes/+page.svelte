@@ -1,18 +1,11 @@
 <script>
-	// TODO: flowbite-svelte 1.x가 현재 빌드 환경과 호환성 문제가 있어 임시로 비활성화
-	// import { Alert, Button } from 'flowbite-svelte';
+	import { Alert, Button } from 'flowbite-svelte';
 </script>
 
 <div class="p-8">
-	<div
-		class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-	>
+	<Alert color="blue" class="mb-4">
 		<span class="font-medium">Info alert!</span>
 		Change a few things up and try submitting again.
-	</div>
-	<button
-		class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-	>
-		Click
-	</button>
+	</Alert>
+	<Button>Click</Button>
 </div>
